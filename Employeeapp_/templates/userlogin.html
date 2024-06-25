@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>User Login</title>
+    <style>
+       
+         
+        .er{
+        color:red;
+        }
+    </style>
+</head>
+<body style="background-color:#f7e9ae;">
+<center>
+
+
+
+   <br><br><h1>EMPLOYEE MANAGEMENT SYSTEM (E.M.S)</h1> <br><br>
+    <h3>LOGIN HERE</h3>
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+            <p class="er">{{error}}</p>
+        {% endfor %}
+    {% endif %}
+    {% for fm in form %}
+        {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
+    {% endfor %}
+    <input href="http://127.0.0.1:8000/home/" type="submit", value="Login"><br> <br>  
+</form>
+    <br>
+    <a href="{% url 'forgotpassword1' %}"> Forgot Password </a> <br><br>
+    <a href="{% url 'signup' %}">Don't have an account ? Signup</a>
+</center>
+</body>
+</html>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body style="background-color:#59819b;">
+
+<center>   
+
+<form action = "{% url 'timesheets1' %}" method = "POST">
+    {% csrf_token %}
+    <div class="container">
+      <h1>FILLING TIMESHEETS</h1>
+      <hr>
+      <label for="name"><b>EMPLOYEE NAME</b></label>
+      <input type="text" name="nm"  required>
+      <br><br>
+      <label for="department"><b>DEPARTMENT</b></label>
+      <input type="text" name="dep" required>
+        <br><br>
+      <label for="task"><b>TASK</b></label>
+      <input type="text" name="d" required>
+        <br><br>
+      <label for="date"><b>DATE</b></label>
+      <input type="date"  name="p"  required>
+      <br><br>
+      <label for="timein"><b>TIME IN</b></label>
+      <input type="time"  name="s"  required>
+      <br><br>
+      <label for="timeout"><b>TIME OUT</b></label>
+      <input type="time"  name="to"  required>
+      <br><br>
+      <label for="effotrs"><b>EFFORTS</b></label>
+      <input type="number" maxlength="2" name="pr"  required>
+      <hr>
+     <button type="submit" >Submit</button>
+    </div>
+    </div>
+  </form>
+</center>
+  </body>
+  </html>

@@ -1,0 +1,46 @@
+
+
+
+
+<html>
+
+    <body style="background-color:#59819b;">
+
+       
+<center>
+<form action = "{% url 'appraisal1' %}" method = "POST">
+    {% csrf_token %}
+    <div class="container">
+      <h1>APPRAISAL FORM</h1>
+      <p>Input the desired values</p>
+      <hr>
+      <label for="Usernamee"><b>NAME</b></label>
+      <input type="text" name="nm"  required>
+      <br><br>
+      <label for="Password"><b>DEPARTMENT</b></label>
+      <input type="text" name="d" required>
+        <br><br>
+      <label for="psw-repeat"><b>PERFORMANCE</b></label>
+      <input type="text"  name="p"  required>
+      <br><br>
+      <label for="psw-repeat"><b>SALARY</b></label>
+      <input type="text"  name="s"  required>
+      <br><br>
+      <label for="psw-repeat"><b>PROGRESS</b></label>
+      <input type="text"  name="pr"  required>
+      <br><br>
+      <label for="psw-repeat"><b>FEEDBACK</b></label>
+      <input type="text"  name="f"  required>
+      <br><br>
+      <label for="psw-repeat"><b>HIKE</b></label>
+      <input type="text"  name="h"  required>
+      <br><br>
+      <hr>
+     <button type="submit" >Submit</button>
+    </div>
+    </div>
+  </form>
+</center>
+  </body>
+  </html>
+

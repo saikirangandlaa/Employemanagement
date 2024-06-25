@@ -1,0 +1,53 @@
+{% extends 'home.html' %}
+{% block body %}
+<link rel = stylesheet href = "//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" defer>
+  <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" defer></script>
+<script>
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+  </script>
+<div  class="container-fluid">
+    
+
+    
+        <h2 style="color:rgb(223, 82, 211);margin-top:4%">Timesheet List
+            <a href="http://127.0.0.1:8000/admin/Employeeapp_/timesheets/add/"><button class="btn btn-primary" align="right" style="float:right">Create</button></a>
+            <a href="http://127.0.0.1:8000/admin/Employeeapp_/timesheets/"><button class="btn btn-primary" align="right" style="float:right">Manage</button></a>        
+          </h2>
+        <table class="table table-bordered" id="myTable">
+  <thead>
+  <tr>
+    <th>Employee Name</th>
+    <th>Department</th>
+    <th>Task</th>
+    <th>Date</th>
+      <th>Time In</th>
+    <th>Time Out</th>
+    <th>Efforts</th>
+  
+  </tr>
+  </thead>
+   <tbody>
+
+    {% for i in timesheets %}
+  <tr>
+
+    <td>{{i.EmoloyeeName}}</td>
+    <td>{{i.department}}</td>
+    <td>{{i.task}}</td>
+      <td>{{i.date}}</td>
+      <td>{{i.timeIn}}</td>
+      <td>{{i.timeOut}}</td>
+      <td>{{i.efforts}}</td>
+    
+  </tr>
+
+    {% endfor %}
+    </tbody>
+
+</table>
+
+</div>
+
+{% endblock  %}

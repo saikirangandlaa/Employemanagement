@@ -1,0 +1,55 @@
+{% extends 'home.html' %}
+{% block body %}
+<link rel = stylesheet href = "//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" defer>
+  <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" defer></script>
+<script>
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+  </script>
+<div  class="container-fluid">
+    
+
+    
+        <h2 style="color:red;margin-top:4%">Appraisal List
+            <a href="http://127.0.0.1:8000/addappraisal/"><button class="btn btn-primary"  style="float:right">Create</button></a> &ensp;
+        
+            <a href="http://127.0.0.1:8000/filter-salary"><button class="btn btn-primary"  style="float:right">Show salary</button></a> &ensp;
+                 
+            <a href="http://127.0.0.1:8000/admin/Employeeapp_/appraisals/"><button class="btn btn-primary"  style="float:right">Manage</button></a>
+          
+          </h2>
+        <table class="table table-bordered" id="myTable">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Department</th>
+    <th>performance</th>
+      <th>progress</th>
+    <th>feedback</th>
+    <th>hikegot</th>
+  
+  </tr>
+  </thead>
+   <tbody>
+
+    {% for i in Appraisal %}
+  <tr>
+
+    <td>{{i.Name}}</td>
+    <td>{{i.Department}}</td>
+    <td>{{i.performance}}</td>
+      <td>{{i.progress}}</td>
+      <td>{{i.feedback}}</td>
+      <td>{{i.hikegot}}</td>
+    
+  </tr>
+
+    {% endfor %}
+    </tbody>
+
+</table>
+
+</div>
+
+{% endblock  %}
